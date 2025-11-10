@@ -131,7 +131,7 @@ export default function Home() {
 
             <div className="flex flex-wrap gap-3 animate-slide-up" style={{ animationDelay: "0.2s" }}>
               <a
-                  href="mailto:rabiulislamsanto.nstu@gmail.com"
+                  href="mailto:rabiul.personalinfo@gmail.com"
                   className="group px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold hover:shadow-xl hover:shadow-cyan-500/40 transition-all duration-300 hover:scale-105 flex items-center gap-2"
               >
                 <Mail size={18} />
@@ -172,7 +172,7 @@ export default function Home() {
 
             <div className="relative w-72 h-96 md:w-80 md:h-96 group">
               <Image
-                  src="/santo_portofolio.png"
+                  src="/santo-portofolio.png"
                   alt="Md. Rabiul Islam Santo - Java Full Stack Engineer"
                   fill
                   className="object-cover rounded-2xl shadow-2xl ring-1 ring-cyan-500/30 group-hover:ring-cyan-500/60 transition-all duration-500 group-hover:scale-105"

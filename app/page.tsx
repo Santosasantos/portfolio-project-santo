@@ -371,6 +371,7 @@ export default function Home() {
                 ],
                 tech: ["Spring Boot", "Angular", "PrimeNG", "ApexCharts", "PostgreSQL"],
                 githubLink: "https://github.com/Santosasantos/epms",
+                demoLink: "http://epms-app-bd2024.azurewebsites.net/"
               },
               {
                 title: "EnDecTic – Secure P2P Encrypted Messaging",
@@ -378,6 +379,7 @@ export default function Home() {
                 impact: ["Military-grade 2048-bit RSA", "Zero-knowledge design", "Digital signatures", "50ms latency"],
                 tech: ["Java", "Socket Programming", "RSA Encryption", "Swing"],
                 githubLink: "https://github.com/Santosasantos/EnDecTic",
+                demoLink: ""
               },
               {
                 title: "Massier – Hostel Management System",
@@ -390,13 +392,15 @@ export default function Home() {
                 ],
                 tech: ["PHP", "MySQL", "JavaScript", "AJAX", "Bootstrap"],
                 githubLink: "https://github.com/Santosasantos/Massier",
+                demoLink: "https://massier.kesug.com/"
               },
               {
                 title: "REST API Architecture Optimization",
                 desc: "Refactored legacy monolithic APIs into microservices. Implemented caching and query optimization for 30% latency reduction.",
                 impact: ["30% latency reduction", "45% DB load decrease", "Redis caching", "Rate limiting"],
                 tech: ["Spring Boot", "Redis", "PostgreSQL", "Docker", "Kubernetes"],
-                githubLink: "https://github.com/Santosasantos"
+                githubLink: "https://github.com/Santosasantos",
+                demoLink: ""
               },
             ].map((project, idx) => (
               <div
@@ -443,16 +447,27 @@ export default function Home() {
                       </span>
                     ))}
                   </div>
-
+                  if({project.demoLink!=""}){
                   <a
-                    href={project.githubLink}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 font-semibold text-sm group-hover:gap-3 transition-all duration-300"
+                      href={project.demoLink}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 font-semibold text-sm group-hover:gap-3 transition-all duration-300"
+                  >
+                    Live Demo
+                    <ExternalLink size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
+                  </a>
+                }
+                  <a
+                      href={project.githubLink}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 font-semibold text-sm group-hover:gap-3 transition-all duration-300"
                   >
                     View on GitHub
                     <ExternalLink size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
                   </a>
+
                 </div>
               </div>
             ))}

@@ -1,33 +1,45 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+import { Fraunces, Archivo, Spline_Sans_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-fraunces",
+  axes: ["opsz"],
+})
+
+const archivo = Archivo({
+  subsets: ["latin"],
+  variable: "--font-archivo",
+})
+
+const splineSansMono = Spline_Sans_Mono({
+  subsets: ["latin"],
+  variable: "--font-spline-mono",
+})
 
 export const metadata: Metadata = {
-  title: "Md. Rabiul Islam Santo - Java Full Stack Engineer | Portfolio",
+  title: "Md. Rabiul Islam Santo — Java Backend Engineer",
   description:
-    "Professional portfolio of Md. Rabiul Islam Santo - Java Full Stack Software Engineer specializing in Spring Boot, Angular, enterprise architecture, and scalable systems. Currently seeking Software Engineer roles.",
+    "Portfolio of Md. Rabiul Islam Santo — Java Backend Engineer with 2+ years of experience building secure, scalable enterprise systems with Java, Spring Boot, Groovy, and PostgreSQL.",
   keywords: [
     "Java",
     "Spring Boot",
-    "Angular",
-    "Full Stack",
+    "Backend Engineer",
     "Software Engineer",
     "Enterprise",
     "Groovy",
     "Grails",
+    "PostgreSQL",
     "Portfolio",
     "Bangladesh",
   ].join(", "),
-  generator: "v0.app",
   openGraph: {
-    title: "Md. Rabiul Islam Santo - Java Full Stack Engineer",
+    title: "Md. Rabiul Islam Santo — Java Backend Engineer",
     description:
-      "Enterprise-grade software architect with proven track record delivering scalable systems for 10K+ users.",
+      "Java Backend Engineer building secure, scalable enterprise systems. 30% faster APIs, 95% test coverage, 99.8% uptime.",
     type: "profile",
     url: "https://santo-portfolio.vercel.app",
   },
@@ -57,7 +69,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans antialiased`}>
+      <body
+        className={`${fraunces.variable} ${archivo.variable} ${splineSansMono.variable} font-sans antialiased`}
+      >
         {children}
         <Analytics />
       </body>

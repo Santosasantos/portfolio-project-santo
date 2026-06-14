@@ -1,33 +1,46 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+import { Syne, Instrument_Sans, JetBrains_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+const syne = Syne({
+  subsets: ["latin"],
+  variable: "--font-syne",
+})
+
+const instrumentSans = Instrument_Sans({
+  subsets: ["latin"],
+  variable: "--font-instrument",
+})
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains",
+})
 
 export const metadata: Metadata = {
-  title: "Md. Rabiul Islam Santo - Java Full Stack Engineer | Portfolio",
+  title: "Md. Rabiul Islam Santo — Java Full Stack Engineer",
   description:
-    "Professional portfolio of Md. Rabiul Islam Santo - Java Full Stack Software Engineer specializing in Spring Boot, Angular, enterprise architecture, and scalable systems. Currently seeking Software Engineer roles.",
+    "Portfolio of Md. Rabiul Islam Santo — Java Full Stack Engineer with 2+ years of experience building secure, scalable enterprise systems with Java, Spring Boot, Angular, TypeScript, and PostgreSQL.",
   keywords: [
     "Java",
     "Spring Boot",
+    "Full Stack Engineer",
     "Angular",
-    "Full Stack",
+    "TypeScript",
     "Software Engineer",
     "Enterprise",
     "Groovy",
     "Grails",
+    "PostgreSQL",
     "Portfolio",
     "Bangladesh",
   ].join(", "),
-  generator: "v0.app",
   openGraph: {
-    title: "Md. Rabiul Islam Santo - Java Full Stack Engineer",
+    title: "Md. Rabiul Islam Santo — Java Full Stack Engineer",
     description:
-      "Enterprise-grade software architect with proven track record delivering scalable systems for 10K+ users.",
+      "Java Full Stack Engineer building secure, scalable enterprise systems. 30% faster APIs, 95% test coverage, 99.8% uptime.",
     type: "profile",
     url: "https://santo-portfolio.vercel.app",
   },
@@ -57,7 +70,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans antialiased`}>
+      <body
+        className={`${syne.variable} ${instrumentSans.variable} ${jetbrainsMono.variable} font-sans antialiased`}
+      >
         {children}
         <Analytics />
       </body>

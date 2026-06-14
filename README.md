@@ -1,45 +1,55 @@
-# Java Full Stack Engineer Portfolio
+# Md. Rabiul Islam Santo — Portfolio
 
-A professional, fully-animated portfolio website built to showcase Java Full Stack engineering expertise and attract 
-top-tier opportunities from enterprises and tech companies.
+Editorial-style portfolio for a Java Backend Engineer, built with Next.js and an optional Supabase content backend.
 
 ## Features
 
-- **Animated Typewriter Hero** - Dynamic name typing effect with rotating job titles
-- **Professional Timeline** - Career progression from Intern to Senior Engineer with quantified metrics
-- **Project Showcase** - Featured projects with real business impact and tech stack highlights
-- **Skills Matrix** - Organized technical skills by category (Languages, Frameworks, Databases, Tools)
-- **Responsive Design** - Mobile-first, fully responsive across all devices
-- **Dark/Light Mode** - Professional theme with smooth transitions
-- **Performance Optimized** - Next.js 16 optimization, 95%+ Lighthouse scores
+- **Refined editorial design** — Fraunces serif display, Archivo body, ink-on-paper palette, numbered sections
+- **Supabase-backed content** — experience, projects, skills, education, and achievements load from Supabase, with an automatic fallback to local data when Supabase is not configured
+- **Downloadable CV** — resume PDF served from `/Resume-Md-Rabiul-Islam-Santo.pdf`
+- **Scroll-triggered reveals** — IntersectionObserver animations that respect `prefers-reduced-motion`
+- **Always-current dates** — experience durations and the footer year are computed at render time (daily ISR)
+- **Fully responsive** — including a proper mobile navigation menu
 
 ## Tech Stack
 
-- **Frontend**: Next.js 16, React 19, TypeScript
-- **Styling**: Tailwind CSS v4, Animated CSS
-- **UI Components**: shadcn/ui
-- **Deployment**: Vercel
+- **Framework**: Next.js 16 (App Router, React Server Components), React 19, TypeScript
+- **Styling**: Tailwind CSS v4
+- **Data**: Supabase (PostgREST via plain `fetch` — no SDK dependency) with local fallback
+- **Deployment**: Vercel (+ Vercel Analytics)
 
-## Key Metrics
+## Project Structure
 
-- **Enterprise Applications**: 10K+ concurrent users
-- **API Performance**: 30% response time improvement
-- **Test Coverage**: 95% with TDD practices
-- **Deployment Efficiency**: 25% improvement through modular architecture
-
-## Live Demo
-
-[View Portfolio](https://your-portfolio.vercel.app)
+```
+app/                      # Layout (fonts, metadata) + server-rendered page
+components/portfolio/     # Nav, Hero, Metrics, Experience, Projects, Skills, Education, Contact, Reveal
+lib/types.ts              # Shared content types
+lib/data/portfolio-data.ts# Local content source (fallback + seed reference)
+lib/supabase/             # Fetch-based PostgREST client + queries with fallback
+supabase/schema.sql       # Tables + RLS public-read policies
+supabase/seed.sql         # Seed data matching the local content
+```
 
 ## Getting Started
 
-### Prerequisites
-- Node.js 18+
-- npm or pnpm
-
-### Installation
-
 ```bash
-git clone https://github.com/yourusername/portfolio-java-fullstack.git
-cd portfolio-java-fullstack
-npm install
+pnpm install
+pnpm dev
+```
+
+The site works out of the box with local data — no environment variables required.
+
+## Enabling Supabase
+
+1. Create a project at [supabase.com/dashboard](https://supabase.com/dashboard)
+2. In the SQL Editor, run `supabase/schema.sql`, then `supabase/seed.sql`
+3. Copy `.env.example` to `.env.local` and fill in the values from **Project Settings → API**:
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+4. Restart the dev server
+
+Content edits made in Supabase appear within an hour (fetches revalidate every 3600s) without a redeploy. If Supabase is unreachable, the site silently falls back to `lib/data/portfolio-data.ts`.
+
+## Updating the CV
+
+Replace `public/Resume-Md-Rabiul-Islam-Santo.pdf` (and keep the filename, or update `resumeUrl` in the profile data/table).

@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Md Rabiul Islam Santo — Java Full Stack Engineer</title>
+<style>
+  /*
+    Resume source, styled after the original two-column template ("resume
+    look.png"): serif name + italic title, square-bulleted section headings,
+    skills/projects in the left column, experience/education/awards right.
+    ATS safeguards kept: DOM order is header -> summary -> left col -> right
+    col so every section extracts contiguously; no icons or letter-spacing in
+    the text layer; ASCII date ranges. Regenerate the PDF with build.ps1.
+  */
+  @page { size: A4; margin: 8mm 10mm; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 8.6pt;
+    line-height: 1.28;
+    color: #1d1d1f;
+  }
+  a { color: #16527d; text-decoration: none; }
+
+  /* Header */
+  .name { font-family: Georgia, "Times New Roman", serif; font-size: 19pt; font-weight: bold; }
+  .title { font-family: Georgia, "Times New Roman", serif; font-size: 11.5pt; font-style: italic; color: #2e2e30; margin-top: 1pt; }
+  .contact { margin-top: 4pt; font-size: 8.6pt; color: #2a2a2c; }
+  .contact span + span::before { content: " | "; color: #9a9a9e; }
+  .contact .links a { color: #16527d; }
+  header { border-bottom: 1.4pt solid #1d1d1f; padding-bottom: 6pt; }
+
+  /* Summary sits full-width under the header, as in the original */
+  .summary { margin-top: 6pt; }
+  .summary p { margin-top: 3pt; }
+
+  /* Section headings — black square + uppercase, ruled.
+     The square is a CSS box, not a glyph, so it never enters the text layer. */
+  h2 {
+    font-size: 9.6pt;
+    text-transform: uppercase;
+    border-bottom: 1pt solid #1d1d1f;
+    padding-bottom: 2pt;
+    margin: 8pt 0 4pt;
+  }
+  h2::before {
+    content: "";
+    display: inline-block;
+    width: 6pt;
+    height: 6pt;
+    background: #1d1d1f;
+    margin-right: 5pt;
+  }
+
+  /* Two columns */
+  .columns { display: flex; gap: 7mm; margin-top: 1pt; }
+  .col-left { width: 46%; }
+  .col-right { width: 54%; }
+
+  .skills p { margin-bottom: 2.5pt; }
+  .skills b { font-weight: bold; }
+
+  .role-line { display: flex; justify-content: space-between; align-items: baseline; gap: 4pt; }
+  .role { font-size: 9.8pt; font-weight: bold; }
+  .dates { font-size: 8.3pt; color: #3a3a3e; white-space: nowrap; }
+  .org { font-size: 8.8pt; color: #3a3a3e; margin-top: 1pt; margin-bottom: 2pt; }
+
+  ul { margin: 2pt 0 5pt; padding-left: 11pt; }
+  li { margin-bottom: 1pt; }
+
+  .project { margin-bottom: 5pt; }
+  .project-name { font-size: 9.3pt; font-weight: bold; }
+  .project-tech { font-size: 8.2pt; font-style: italic; color: #3a3a3e; margin: 1pt 0 1pt; }
+  .project ul { margin-bottom: 0; }
+
+  .edu-degree { font-weight: bold; font-size: 9.3pt; }
+  .award { margin-bottom: 4pt; }
+  .award-title { font-weight: bold; }
+  .award-meta { font-size: 8.3pt; color: #3a3a3e; }
+  .interests { color: #2a2a2c; }
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="name">Md Rabiul Islam Santo</div>
+    <div class="title">Java Full Stack Engineer</div>
+    <p class="contact">
+      <span>rabiul.personalinfo@gmail.com</span>
+      <span>+880 1616-913975</span>
+      <span>Gulshan 1, Dhaka, Bangladesh</span>
+      <span>Available on 2 months notice</span>
+    </p>
+    <p class="contact links">
+      <span>Portfolio: santo-portfolio.vercel.app</span>
+      <span>LinkedIn: linkedin.com/in/md-rabiul-islam-santo</span>
+      <span>GitHub: github.com/Santosasantos</span>
+    </p>
+  </header>
+
+  <section class="summary">
+    <p>
+      Java Full Stack Engineer with 2+ years of experience building secure, scalable enterprise
+      applications for 10,000+ users using Java, Spring Boot, Angular, TypeScript, and React.
+      Reduced average API response time by 30%, sustained 99.8% platform uptime, and achieved 95%
+      automated test coverage through test-driven development and clean architecture. Combines deep
+      backend expertise (RESTful APIs, PostgreSQL, Kafka) with production frontend delivery,
+      including Angular analytics dashboards that increased platform adoption by 52%.
+    </p>
+  </section>
+
+  <div class="columns">
+    <div class="col-left">
+
+      <section class="skills">
+        <h2>Technical Skills</h2>
+        <p><b>Backend Development:</b> Java, Spring Boot, Groovy, Grails, REST APIs, Microservices Fundamentals</p>
+        <p><b>Frontend Development:</b> Angular, TypeScript, React, Next.js, JavaScript, HTML, CSS, Vaadin, PrimeNG</p>
+        <p><b>Security &amp; Reliability:</b> Secure Coding Practices, JWT Authentication, Authorization, Role-Based Access Control (RBAC), Data Protection</p>
+        <p><b>Databases:</b> PostgreSQL, MySQL, Redis</p>
+        <p><b>Testing &amp; Quality:</b> JUnit, Mockito, TDD (Test-Driven Development), SonarQube</p>
+        <p><b>DevOps &amp; Tools:</b> Git, GitLab, Maven, Gradle, Jenkins, Docker, Kubernetes (familiar), JIRA</p>
+        <p><b>Cloud &amp; Messaging:</b> AWS (foundational), Apache Kafka, RabbitMQ</p>
+        <p><b>Methodologies:</b> Agile/Scrum, Clean Architecture, SOLID Principles</p>
+      </section>
+
+      <section>
+        <h2>Projects</h2>
+
+        <div class="project">
+          <div class="project-name">NexusPay — Full Stack Fintech Payment Platform</div>
+          <p class="project-tech">Java, Spring Boot, PostgreSQL, Redis, Apache Kafka, Resilience4j, React, Next.js, TypeScript, Docker — github.com/Santosasantos/NexusPay</p>
+          <ul>
+            <li>Engineered a secure full-stack fintech platform supporting digital wallets and concurrent peer-to-peer transactions with 100% ACID-compliant operations.</li>
+            <li>Eliminated 100% of transfer deadlocks through pessimistic database locking and API idempotency; decoupled notification and analytics services with Kafka events.</li>
+            <li>Built a real-time analytics dashboard with React, Next.js, and TypeScript over a JWT-secured REST API spanning 2 role-separated portals (consumer and admin); protected critical endpoints with Resilience4j rate limiting.</li>
+          </ul>
+        </div>
+
+        <div class="project">
+          <div class="project-name">360-Assessment — Employee Performance Management Platform</div>
+          <p class="project-tech">Spring Boot, Angular, TypeScript, JHipster, PrimeNG, PostgreSQL — github.com/Santosasantos/epms</p>
+          <ul>
+            <li>Developed a full-stack 360-degree evaluation platform processing multi-source feedback for 500+ employees.</li>
+            <li>Designed secure backend modules for analytics aggregation, reporting pipelines, and role-based access control across 5 responder categories (self, supervisor, peer, supervisee, stakeholder).</li>
+            <li>Improved reporting efficiency by 40% through interactive Angular dashboards and optimized data retrieval.</li>
+          </ul>
+        </div>
+
+        <div class="project">
+          <div class="project-name">Massier — Mess Management System</div>
+          <p class="project-tech">PHP, JavaScript, MySQL, AJAX — github.com/Santosasantos/Massier</p>
+          <ul>
+            <li>Created a web platform automating hostel and mess operations for 200+ residents, improving operational efficiency by 70%.</li>
+            <li>Implemented real-time updates and an AJAX chat module, reducing communication overhead by 85%.</li>
+          </ul>
+        </div>
+      </section>
+
+    </div>
+    <div class="col-right">
+
+      <section>
+        <h2>Experience</h2>
+        <div class="role-line">
+          <span class="role">Software Engineer</span>
+          <span class="dates">04/2024 - Present</span>
+        </div>
+        <p class="org">BRAC IT Services Ltd, Software Engineering Department — Dhaka, Bangladesh</p>
+        <ul>
+          <li>Engineered scalable backend services using Java, Spring Boot, Groovy, and Grails for enterprise-grade applications serving 10,000+ users.</li>
+          <li>Built full-stack features with Spring Boot, Angular, and Vaadin — including the 360-Degree Feedback module (EPMS), improving evaluation workflow speed by 40%.</li>
+          <li>Optimized RESTful APIs and database queries, reducing average response time by 30% across high-usage modules.</li>
+          <li>Designed interactive analytics dashboards with Angular and ApexCharts, increasing platform adoption by 52%.</li>
+          <li>Strengthened application security by implementing authentication, authorization, and role-based access control, protecting sensitive data workflows for 10,000+ users.</li>
+          <li>Applied clean architecture, SOLID principles, and Test-Driven Development, achieving 95% automated test coverage.</li>
+          <li>Streamlined CI/CD workflows using Git, GitLab, Maven, and Jenkins, sustaining 99.8% platform uptime.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Education</h2>
+        <div class="role-line">
+          <span class="edu-degree">B.Sc. in Software Engineering (CGPA: 3.45 / 4.00)</span>
+          <span class="dates">01/2020 - 08/2025</span>
+        </div>
+        <p class="org">Noakhali Science and Technology University — Noakhali, Bangladesh</p>
+      </section>
+
+      <section>
+        <h2>Achievements &amp; Awards</h2>
+        <div class="award">
+          <div class="award-title">Champion — BUET CSE Fest CTF</div>
+          <div class="award-meta">BUET — 10/2024</div>
+        </div>
+        <div class="award">
+          <div class="award-title">9th Place — CTFBD Maze in Antarjal</div>
+          <div class="award-meta">ICT Division — 06/2023</div>
+        </div>
+        <div class="award">
+          <div class="award-title">Best Campus Leader — Banglalink AppLink</div>
+          <div class="award-meta">Banglalink — 11/2022</div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Interests</h2>
+        <p class="interests">Full Stack Architecture | Cybersecurity Trends | Strategy Games | Tech Communities</p>
+      </section>
+
+    </div>
+  </div>
+
+</body>
+</html>

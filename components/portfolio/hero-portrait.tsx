@@ -4,10 +4,10 @@ import Image from "next/image"
 import { useTypewriter } from "@/hooks/use-typewriter"
 
 /**
- * Hero portrait as a live engineer "avatar": the photo masked into a circle,
- * phosphor-duotone, wrapped in counter-rotating orbit rings with an orbiting
- * node, a floating LIVE chip, a role pill, and a typed status line. Reveals
- * full colour on hover. Motion is disabled under prefers-reduced-motion.
+ * Hero portrait as a live engineer "avatar": a full-colour illustrated portrait
+ * masked into a circle, wrapped in counter-rotating orbit rings with an orbiting
+ * node, a floating LIVE chip, a role pill, and a typed status line. Gently zooms
+ * on hover. Motion is disabled under prefers-reduced-motion.
  */
 export function HeroPortrait({ location, src }: { location: string; src: string }) {
   const status = useTypewriter(
@@ -34,7 +34,7 @@ export function HeroPortrait({ location, src }: { location: string; src: string 
         {/* Inner dashed counter-ring */}
         <div aria-hidden className="orbit-ring-rev absolute inset-1 rounded-full border border-dashed border-line-strong/50" />
 
-        {/* The avatar */}
+        {/* The avatar — full-colour illustrated portrait */}
         <div className="absolute inset-2 overflow-hidden rounded-full border border-line-strong bg-surface">
           <Image
             src={src}
@@ -43,14 +43,13 @@ export function HeroPortrait({ location, src }: { location: string; src: string 
             priority
             quality={95}
             sizes="(min-width: 1024px) 320px, 256px"
-            className="scale-110 object-cover object-[50%_22%] grayscale contrast-[1.05] transition-all duration-700 group-hover:scale-[1.18] group-hover:grayscale-0 group-hover:contrast-100"
+            className="scale-105 object-cover object-center transition-transform duration-700 group-hover:scale-110"
           />
-          {/* Phosphor duotone — fades on hover */}
-          <div aria-hidden className="absolute inset-0 bg-accent opacity-40 mix-blend-color transition-opacity duration-700 group-hover:opacity-0" />
-          {/* Base depth + scanner + CRT lines */}
-          <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
+          {/* Subtle base depth so it seats into the circle */}
+          <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
+          {/* Live scanner + faint CRT lines */}
           <div aria-hidden className="scan-beam" />
-          <div aria-hidden className="scanlines absolute inset-0 opacity-50 transition-opacity duration-700 group-hover:opacity-15" />
+          <div aria-hidden className="scanlines absolute inset-0 opacity-20 transition-opacity duration-700 group-hover:opacity-10" />
         </div>
 
         {/* Floating LIVE chip */}

@@ -37,3 +37,6 @@ next-env.d.ts
 
 # Source resume PDF (canonical copy lives in public/)
 Resume Md Rabiul Islam Santo.pdf
+
+# Local design reference image (not a source asset)
+resume look.png

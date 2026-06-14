@@ -1,2 +1,7 @@
+# Approve sharp's native build script (pnpm gates build scripts by default).
+# Both keys kept for cross-version safety: pnpm 11 reads `allowBuilds`,
+# pnpm 9/10 read `onlyBuiltDependencies`.
 allowBuilds:
   sharp: true
+onlyBuiltDependencies:
+  - sharp

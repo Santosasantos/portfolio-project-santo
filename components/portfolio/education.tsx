@@ -10,7 +10,7 @@ interface EducationSectionProps {
 
 export function EducationSection({ education, achievements }: EducationSectionProps) {
   return (
-    <section id="education" className="border-y border-rule bg-paper-raised">
+    <section id="education" className="border-y border-line bg-surface/60">
       <div className="mx-auto max-w-6xl scroll-mt-20 px-5 py-24 sm:px-8">
         <SectionHeading number="04" title="Education & Honors" />
 
@@ -18,15 +18,15 @@ export function EducationSection({ education, achievements }: EducationSectionPr
           <Reveal>
             <div className="flex items-center gap-3">
               <GraduationCap size={18} className="text-accent" />
-              <h3 className="font-mono text-[12px] uppercase tracking-widest text-ink-faint">Education</h3>
+              <h3 className="font-mono text-[12px] uppercase tracking-widest text-fg-faint">Education</h3>
             </div>
-            <div className="mt-6 border-t border-rule pt-6">
-              <p className="font-mono text-[13px] text-ink-faint">{education.period}</p>
-              <h4 className="mt-2 font-display text-2xl font-medium tracking-tight text-ink">
+            <div className="mt-6 border-t border-line pt-6">
+              <p className="font-mono text-[13px] text-fg-faint">{education.period}</p>
+              <h4 className="mt-2 font-display text-2xl font-bold tracking-tight text-fg">
                 {education.degree}
               </h4>
-              <p className="mt-2 text-ink-soft">{education.institution}</p>
-              <p className="mt-1 font-mono text-[13px] text-ink-faint">
+              <p className="mt-2 text-fg-soft">{education.institution}</p>
+              <p className="mt-1 font-mono text-[13px] text-fg-faint">
                 {education.location} · {education.gpa}
               </p>
             </div>
@@ -35,7 +35,7 @@ export function EducationSection({ education, achievements }: EducationSectionPr
           <Reveal delay={100}>
             <div className="flex items-center gap-3">
               <Trophy size={18} className="text-accent" />
-              <h3 className="font-mono text-[12px] uppercase tracking-widest text-ink-faint">
+              <h3 className="font-mono text-[12px] uppercase tracking-widest text-fg-faint">
                 Achievements & Awards
               </h3>
             </div>
@@ -43,15 +43,15 @@ export function EducationSection({ education, achievements }: EducationSectionPr
               {achievements.map((achievement) => (
                 <li
                   key={achievement.id}
-                  className="flex items-baseline justify-between gap-6 border-t border-rule py-5"
+                  className="flex items-baseline justify-between gap-6 border-t border-line py-5"
                 >
                   <div>
-                    <p className="font-display text-lg font-medium tracking-tight text-ink">
+                    <p className="font-display text-lg font-bold tracking-tight text-fg">
                       {achievement.title}
                     </p>
-                    <p className="mt-1 text-sm text-ink-soft">{achievement.issuer}</p>
+                    <p className="mt-1 text-sm text-fg-soft">{achievement.issuer}</p>
                   </div>
-                  <p className="shrink-0 font-mono text-[13px] text-ink-faint">{achievement.date}</p>
+                  <p className="shrink-0 font-mono text-[13px] text-fg-faint">{achievement.date}</p>
                 </li>
               ))}
             </ul>

@@ -3,13 +3,13 @@
 
 insert into profile (name, title, roles, summary, email, phone, location, availability, resume_url, social) values (
   'Md. Rabiul Islam Santo',
-  'Java Backend Engineer',
-  array['Java Backend Engineer', 'Spring Boot Specialist', 'Enterprise Systems Builder', 'API & Performance Engineer'],
-  'Java Backend Engineer with 2+ years of hands-on experience designing secure, scalable enterprise applications with Java, Spring Boot, Groovy, and PostgreSQL. Focused on clean architecture, test-driven development, and high-availability backend systems.',
+  'Java Full Stack Engineer',
+  array['Java Full Stack Engineer', 'Spring Boot Specialist', 'Angular & TypeScript Developer', 'API & Performance Engineer'],
+  'Java Full Stack Engineer with 2+ years of hands-on experience building secure, scalable enterprise applications — Java, Spring Boot, and PostgreSQL on the backend, Angular and TypeScript on the frontend. Focused on clean architecture, test-driven development, and high-availability systems.',
   'rabiul.personalinfo@gmail.com',
   '+880 1616-913975',
   'Dhaka, Bangladesh',
-  'Available on 1 month notice',
+  'Available on 2 months notice',
   '/Resume-Md-Rabiul-Islam-Santo.pdf',
   '[
     {"label": "GitHub", "url": "https://github.com/Santosasantos"},
@@ -24,33 +24,19 @@ insert into experiences (id, role, company, location, start_date, end_date, high
   'Software Engineer',
   'BRAC IT Services Ltd',
   'Dhaka, Bangladesh',
-  '2024-09-01',
+  '2024-04-01',
   null,
   array[
     'Engineered scalable backend services with Java, Spring Boot, Groovy, and Grails for enterprise applications serving 10K+ users',
+    'Built full-stack features with Spring Boot, Angular, and Vaadin — including the 360-Degree Feedback module (EPMS), improving evaluation workflow speed by 40%',
     'Optimized RESTful APIs and database queries, reducing average response time by 30% across high-usage modules',
+    'Designed interactive analytics dashboards with ApexCharts, increasing platform adoption by 52%',
     'Strengthened application security with authentication, authorization, and role-based access control for sensitive data workflows',
     'Applied clean architecture, SOLID principles, and TDD — achieving 95% automated test coverage',
     'Streamlined CI/CD workflows with Git, GitLab, Maven, and Jenkins, sustaining 99.8% platform uptime'
   ],
-  array['Java', 'Spring Boot', 'Groovy', 'Grails', 'PostgreSQL', 'Redis', 'Docker', 'GitLab', 'Jenkins'],
+  array['Java', 'Spring Boot', 'Groovy', 'Grails', 'Angular', 'TypeScript', 'PostgreSQL', 'Redis', 'Docker', 'GitLab', 'Jenkins'],
   1
-),
-(
-  'brac-it-intern',
-  'Software Engineering Intern',
-  'BRAC IT Services Ltd',
-  'Dhaka, Bangladesh',
-  '2024-04-01',
-  '2024-09-01',
-  array[
-    'Built full-stack features with Spring Boot, Angular, and Vaadin across enterprise product modules',
-    'Developed the 360-Degree Feedback module (EPMS), improving evaluation workflow speed by 40%',
-    'Designed interactive analytics dashboards with ApexCharts, increasing platform adoption by 52%',
-    'Maintained 99%+ API uptime and contributed to peer code reviews'
-  ],
-  array['Java', 'Spring Boot', 'Angular', 'JHipster', 'MySQL', 'REST APIs', 'Maven'],
-  2
 );
 
 insert into projects (id, title, tagline, description, impact, tech, github_url, demo_url, sort_order) values
@@ -58,14 +44,14 @@ insert into projects (id, title, tagline, description, impact, tech, github_url,
   'nexuspay',
   'NexusPay',
   'Fintech Payment Platform',
-  'Secure fintech platform supporting digital wallets and concurrent peer-to-peer transactions with ACID-compliant operations.',
+  'Full-stack fintech platform supporting digital wallets, concurrent peer-to-peer transactions, and a real-time analytics dashboard with ACID-compliant operations.',
   array[
     'Eliminated transfer deadlocks via database locking and API idempotency',
-    'Scaled asynchronous workflows with Kafka',
+    'Event-driven architecture with Kafka decoupling notifications & analytics',
     'Fault tolerance with Resilience4j rate limiting',
-    'JWT-secured authentication flows'
+    'React/Next.js analytics dashboard over a JWT-secured API'
   ],
-  array['Java', 'Spring Boot', 'PostgreSQL', 'Kafka', 'Resilience4j', 'JWT'],
+  array['Java', 'Spring Boot', 'PostgreSQL', 'Redis', 'Kafka', 'React', 'Next.js', 'Docker'],
   'https://github.com/Santosasantos/NexusPay',
   null,
   1
@@ -123,9 +109,9 @@ insert into skill_categories (id, title, skills, sort_order) values
 ('backend', 'Backend Development', array['Java', 'Spring Boot', 'Groovy', 'Grails', 'REST APIs', 'Microservices'], 1),
 ('security', 'Security & Reliability', array['Secure Coding', 'JWT Authentication', 'Authorization', 'RBAC', 'Data Protection'], 2),
 ('data-messaging', 'Data & Messaging', array['PostgreSQL', 'MySQL', 'Redis', 'Kafka', 'RabbitMQ'], 3),
-('testing', 'Testing & Quality', array['JUnit', 'Mockito', 'TDD', 'SonarQube', 'Load Testing'], 4),
+('testing', 'Quality & Methods', array['JUnit', 'Mockito', 'TDD', 'SonarQube', 'Agile/Scrum', 'Clean Architecture', 'SOLID Principles'], 4),
 ('devops', 'DevOps & Cloud', array['Git/GitLab', 'Maven', 'Gradle', 'Jenkins', 'Docker', 'Kubernetes', 'AWS'], 5),
-('frontend-methods', 'Frontend & Methods', array['Angular', 'TypeScript', 'Agile/Scrum', 'Clean Architecture', 'SOLID Principles'], 6);
+('frontend', 'Frontend Development', array['Angular', 'TypeScript', 'React', 'Next.js', 'Vaadin', 'PrimeNG'], 6);
 
 insert into education (degree, institution, location, period, gpa) values (
   'B.Sc. in Software Engineering',

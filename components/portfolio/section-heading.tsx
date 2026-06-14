@@ -9,15 +9,26 @@ interface SectionHeadingProps {
 export function SectionHeading({ number, title, subtitle }: SectionHeadingProps) {
   return (
     <Reveal>
-      <div className="flex items-baseline gap-4 sm:gap-6">
-        <span className="font-mono text-sm text-accent tracking-widest">{number}</span>
-        <h2 className="font-display text-4xl sm:text-5xl font-medium tracking-tight text-ink shrink-0">
-          {title}
-        </h2>
-        <div className="h-px flex-1 bg-rule-strong/60 translate-y-[-0.4em] hidden sm:block" />
+      <div className="relative">
+        {/* Oversized ghost numeral the heading overlaps */}
+        <span
+          aria-hidden
+          className="text-ghost-outline pointer-events-none absolute -left-1 -top-4 select-none font-display text-8xl font-bold leading-none sm:-top-8 sm:text-[10rem]"
+        >
+          {number}
+        </span>
+        <div className="relative flex items-baseline gap-4 pt-14 sm:gap-6 sm:pt-24">
+          <h2 className="shrink-0 font-display text-4xl font-bold tracking-tight text-fg sm:text-5xl">
+            {title}
+          </h2>
+          <div className="hidden h-px flex-1 translate-y-[-0.4em] bg-line-strong/60 sm:block" />
+          <span className="hidden shrink-0 font-mono text-[11px] tracking-widest text-accent sm:inline">
+            {`/* ${number} */`}
+          </span>
+        </div>
       </div>
       {subtitle && (
-        <p className="mt-4 max-w-2xl text-ink-soft leading-relaxed sm:pl-16">
+        <p className="mt-4 max-w-2xl leading-relaxed text-fg-soft">
           {subtitle}
         </p>
       )}

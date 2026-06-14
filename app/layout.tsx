@@ -1,33 +1,34 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Fraunces, Archivo, Spline_Sans_Mono } from "next/font/google"
+import { Syne, Instrument_Sans, JetBrains_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
-const fraunces = Fraunces({
+const syne = Syne({
   subsets: ["latin"],
-  variable: "--font-fraunces",
-  axes: ["opsz"],
+  variable: "--font-syne",
 })
 
-const archivo = Archivo({
+const instrumentSans = Instrument_Sans({
   subsets: ["latin"],
-  variable: "--font-archivo",
+  variable: "--font-instrument",
 })
 
-const splineSansMono = Spline_Sans_Mono({
+const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
-  variable: "--font-spline-mono",
+  variable: "--font-jetbrains",
 })
 
 export const metadata: Metadata = {
-  title: "Md. Rabiul Islam Santo — Java Backend Engineer",
+  title: "Md. Rabiul Islam Santo — Java Full Stack Engineer",
   description:
-    "Portfolio of Md. Rabiul Islam Santo — Java Backend Engineer with 2+ years of experience building secure, scalable enterprise systems with Java, Spring Boot, Groovy, and PostgreSQL.",
+    "Portfolio of Md. Rabiul Islam Santo — Java Full Stack Engineer with 2+ years of experience building secure, scalable enterprise systems with Java, Spring Boot, Angular, TypeScript, and PostgreSQL.",
   keywords: [
     "Java",
     "Spring Boot",
-    "Backend Engineer",
+    "Full Stack Engineer",
+    "Angular",
+    "TypeScript",
     "Software Engineer",
     "Enterprise",
     "Groovy",
@@ -37,9 +38,9 @@ export const metadata: Metadata = {
     "Bangladesh",
   ].join(", "),
   openGraph: {
-    title: "Md. Rabiul Islam Santo — Java Backend Engineer",
+    title: "Md. Rabiul Islam Santo — Java Full Stack Engineer",
     description:
-      "Java Backend Engineer building secure, scalable enterprise systems. 30% faster APIs, 95% test coverage, 99.8% uptime.",
+      "Java Full Stack Engineer building secure, scalable enterprise systems. 30% faster APIs, 95% test coverage, 99.8% uptime.",
     type: "profile",
     url: "https://santo-portfolio.vercel.app",
   },
@@ -70,7 +71,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${fraunces.variable} ${archivo.variable} ${splineSansMono.variable} font-sans antialiased`}
+        className={`${syne.variable} ${instrumentSans.variable} ${jetbrainsMono.variable} font-sans antialiased`}
       >
         {children}
         <Analytics />

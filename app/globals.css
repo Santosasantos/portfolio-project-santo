@@ -289,6 +289,101 @@
     }
   }
 
+  /* Hero portrait — decrypt-style reveal on mount */
+  @keyframes portrait-decrypt {
+    from {
+      clip-path: inset(0 0 100% 0);
+      filter: brightness(1.6) contrast(1.4);
+    }
+    to {
+      clip-path: inset(0 0 0% 0);
+    }
+  }
+  .animate-decrypt {
+    animation: portrait-decrypt 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  /* Sci-fi scanner beam sweeping down the portrait */
+  @keyframes portrait-scan {
+    0% {
+      top: -8%;
+      opacity: 0;
+    }
+    10%,
+    90% {
+      opacity: 0.8;
+    }
+    100% {
+      top: 108%;
+      opacity: 0;
+    }
+  }
+  .scan-beam {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    box-shadow: 0 0 14px 1px var(--accent-dim);
+    animation: portrait-scan 3.4s ease-in-out infinite;
+  }
+
+  /* Brackets/HUD fade-and-draw in */
+  @keyframes hud-in {
+    from {
+      opacity: 0;
+      transform: scale(0.6);
+    }
+  }
+  .animate-hud-in {
+    animation: hud-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  /* Avatar orbit rings + entrance + float */
+  @keyframes orbit {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  .orbit-ring {
+    animation: orbit 20s linear infinite;
+  }
+  .orbit-ring-rev {
+    animation: orbit 30s linear infinite reverse;
+  }
+  @keyframes avatar-in {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+  }
+  .avatar-in {
+    animation: avatar-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  @keyframes avatar-float {
+    50% {
+      transform: translateY(-6px);
+    }
+  }
+  .avatar-float {
+    animation: avatar-float 5s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-decrypt,
+    .scan-beam,
+    .animate-hud-in,
+    .orbit-ring,
+    .orbit-ring-rev,
+    .avatar-in,
+    .avatar-float {
+      animation: none;
+    }
+    .scan-beam {
+      display: none;
+    }
+  }
+
   /* CRT scanline overlay for image previews */
   .scanlines {
     pointer-events: none;

@@ -1,11 +1,10 @@
 "use client"
 
-import Image from "next/image"
 import { ArrowDownToLine, ArrowUpRight, Mail } from "lucide-react"
 import { Reveal } from "@/components/portfolio/reveal"
 import { HeroCanvas } from "@/components/portfolio/hero-canvas"
+import { HeroPortrait } from "@/components/portfolio/hero-portrait"
 import { Magnetic } from "@/components/portfolio/magnetic"
-import { TerminalWindow } from "@/components/portfolio/terminal-window"
 import { useTypewriter } from "@/hooks/use-typewriter"
 import type { Profile } from "@/lib/types"
 
@@ -110,36 +109,9 @@ export function Hero({ profile }: { profile: Profile }) {
           </Reveal>
         </div>
 
-        {/* Right — portrait framed as an editor preview window */}
+        {/* Right — portrait as a live engineer "avatar" preview */}
         <Reveal delay={150} className="lg:col-span-5">
-          <div className="group relative ml-auto max-w-sm">
-            {/* Phosphor glow behind the window */}
-            <div aria-hidden className="absolute -inset-5 -z-10 bg-accent-soft blur-3xl" />
-            {/* HUD corner brackets */}
-            <span aria-hidden className="absolute -left-4 -top-4 z-10 h-4 w-4 border-l-2 border-t-2 border-accent" />
-            <span aria-hidden className="absolute -right-4 -top-4 z-10 h-4 w-4 border-r-2 border-t-2 border-accent" />
-            <span aria-hidden className="absolute -bottom-4 -left-4 z-10 h-4 w-4 border-b-2 border-l-2 border-accent" />
-            <span aria-hidden className="absolute -bottom-4 -right-4 z-10 h-4 w-4 border-b-2 border-r-2 border-accent" />
-
-            <TerminalWindow title="~/assets/santo.png — preview" className="shadow-[0_24px_64px_-24px_rgba(0,0,0,0.7)]">
-              <div className="relative aspect-[3/4] overflow-hidden">
-                <Image
-                  src="/santo-portofolio.png"
-                  alt="Md. Rabiul Islam Santo — Java Full Stack Engineer"
-                  fill
-                  priority
-                  quality={95}
-                  sizes="(min-width: 1024px) 384px, 100vw"
-                  className="object-cover grayscale-[35%] transition-all duration-700 group-hover:scale-[1.03] group-hover:grayscale-0"
-                />
-                <div aria-hidden className="scanlines absolute inset-0 opacity-60 transition-opacity duration-700 group-hover:opacity-20" />
-              </div>
-              <div className="flex items-baseline justify-between border-t border-line px-4 py-2.5 font-mono text-[10px] uppercase tracking-widest text-fg-faint">
-                <span>{profile.location}</span>
-                <span>{profile.phone}</span>
-              </div>
-            </TerminalWindow>
-          </div>
+          <HeroPortrait location={profile.location} />
         </Reveal>
       </div>
     </section>

@@ -9,7 +9,7 @@ import { useTypewriter } from "@/hooks/use-typewriter"
  * node, a floating LIVE chip, a role pill, and a typed status line. Reveals
  * full colour on hover. Motion is disabled under prefers-reduced-motion.
  */
-export function HeroPortrait({ location }: { location: string }) {
+export function HeroPortrait({ location, src }: { location: string; src: string }) {
   const status = useTypewriter(
     ["status: online", "stack: java · spring · angular", "build: passing", `loc: ${location}`],
     55,
@@ -37,7 +37,7 @@ export function HeroPortrait({ location }: { location: string }) {
         {/* The avatar */}
         <div className="absolute inset-2 overflow-hidden rounded-full border border-line-strong bg-surface">
           <Image
-            src="/santo-portofolio.png"
+            src={src}
             alt="Md. Rabiul Islam Santo — Java Full Stack Engineer"
             fill
             priority

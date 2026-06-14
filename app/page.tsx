@@ -1,3 +1,5 @@
+import { existsSync } from "node:fs"
+import { join } from "node:path"
 import { getPortfolioData } from "@/lib/supabase/queries"
 import { Nav } from "@/components/portfolio/nav"
 import { Hero } from "@/components/portfolio/hero"
@@ -14,9 +16,19 @@ import { CommandPalette } from "@/components/portfolio/command-palette"
 // Re-render daily so computed durations ("1 yr 3 mos") and the footer year stay current
 export const revalidate = 86400
 
+// Prefer a dedicated illustrated avatar if one has been dropped into public/;
+// otherwise fall back to the portrait photo. Resolved at build time.
+function resolveAvatarSrc(): string {
+  for (const file of ["avatar.png", "avatar.webp", "avatar.jpg"]) {
+    if (existsSync(join(process.cwd(), "public", file))) return `/${file}`
+  }
+  return "/santo-portofolio.png"
+}
+
 export default async function Home() {
   const data = await getPortfolioData()
   const { profile, experiences, projects, skillCategories, education, achievements, metrics } = data
+  const avatarSrc = resolveAvatarSrc()
 
   const tickerItems = [...new Set(skillCategories.flatMap((category) => category.skills))]
 
@@ -27,7 +39,7 @@ export default async function Home() {
       <div className="scroll-progress" aria-hidden />
       <Nav resumeUrl={profile.resumeUrl} />
       <main>
-        <Hero profile={profile} />
+        <Hero profile={profile} avatarSrc={avatarSrc} />
         <Metrics metrics={metrics} />
         <Ticker items={tickerItems} />
         <ExperienceSection experiences={experiences} />

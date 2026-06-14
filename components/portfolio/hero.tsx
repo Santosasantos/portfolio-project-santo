@@ -8,7 +8,7 @@ import { Magnetic } from "@/components/portfolio/magnetic"
 import { useTypewriter } from "@/hooks/use-typewriter"
 import type { Profile } from "@/lib/types"
 
-export function Hero({ profile }: { profile: Profile }) {
+export function Hero({ profile, avatarSrc }: { profile: Profile; avatarSrc: string }) {
   const animatedRole = useTypewriter(profile.roles, 80, 2500)
   // Break the name across two lines at its midpoint for the display treatment
   const words = profile.name.split(" ")
@@ -111,7 +111,7 @@ export function Hero({ profile }: { profile: Profile }) {
 
         {/* Right — portrait as a live engineer "avatar" preview */}
         <Reveal delay={150} className="lg:col-span-5">
-          <HeroPortrait location={profile.location} />
+          <HeroPortrait location={profile.location} src={avatarSrc} />
         </Reveal>
       </div>
     </section>

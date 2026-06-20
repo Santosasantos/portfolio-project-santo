@@ -10,7 +10,7 @@ insert into profile (name, title, roles, summary, email, phone, location, availa
   '+880 1616-913975',
   'Dhaka, Bangladesh',
   'Available on 2 months notice',
-  '/Resume-Md-Rabiul-Islam-Santo.pdf',
+  '/Md_Rabiul_Islam_Santo_Resume.pdf',
   '[
     {"label": "GitHub", "url": "https://github.com/Santosasantos"},
     {"label": "LinkedIn", "url": "https://www.linkedin.com/in/md-rabiul-islam-santo/"},

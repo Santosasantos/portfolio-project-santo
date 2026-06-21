@@ -42,21 +42,16 @@ export const metadata: Metadata = {
     description:
       "Java Full Stack Engineer building secure, scalable enterprise systems. 30% faster APIs, 95% test coverage, 99.8% uptime.",
     type: "profile",
-    url: "https://santo-portfolio.vercel.app",
+    url: "https://www.santoosa-santos.tech/",
   },
   icons: {
     icon: [
-      {
-        url: "/avatar-32x32.png",
-        sizes: "32x32",
-        type: "image/png",
-      },
       {
         url: "/avatar.png",
         type: "image/png",
       },
     ],
-    apple: "/avatar-180x180.png",
+    apple: "/avatar.png",
   },
 }
 

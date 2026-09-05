@@ -38,13 +38,13 @@ export function Hero({ profile, avatarSrc }: { profile: Profile; avatarSrc: stri
         {/* Left — name and intro */}
         <div className="lg:col-span-7">
           <Reveal>
-            <p className="flex items-center gap-3 font-mono text-[12px] uppercase tracking-widest text-accent">
+            {/* <p className="flex items-center gap-3 font-mono text-[12px] uppercase tracking-widest text-accent">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
               </span>
               {profile.availability}
-            </p>
+            </p> */}
 
             <h1 className="mt-8 font-display text-5xl font-extrabold uppercase leading-[0.98] tracking-tight text-fg sm:text-7xl lg:text-8xl">
               {lineOne}

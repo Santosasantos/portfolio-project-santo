@@ -21,7 +21,7 @@ export const portfolioData: PortfolioData = {
     phone: "+880 1616-913975",
     location: "Dhaka, Bangladesh",
     availability: "Available on 2 months notice",
-    resumeUrl: "/Md_Rabiul_Islam_Santo_Resume.pdf",
+    resumeUrl: "/Resume-Md-Rabiul-Islam-Santo.pdf",
     social: [
       { label: "GitHub", url: "https://github.com/Santosasantos" },
       { label: "LinkedIn", url: "https://www.linkedin.com/in/md-rabiul-islam-santo/" },
